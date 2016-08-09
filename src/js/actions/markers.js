@@ -20,8 +20,8 @@ export function setMarkers(coords) {
 }
 export function setExpandedMarkers(coords) {
   let newMarkers = {},
-      priceMarker,
-      timeMarker;
+  priceMarker,
+  timeMarker;
   if (coords.price) {
     priceMarker = new google.maps.Marker({
       position: coords['price'].start,
@@ -36,8 +36,8 @@ export function setExpandedMarkers(coords) {
       icon: 'http://www.googlemapsmarkers.com/v1/279a80/'
     });
   }
-      newMarkers.price = priceMarker;
-      newMarkers.time = timeMarker;
+  newMarkers.price = priceMarker;
+  newMarkers.time = timeMarker;
   return {
     type: SET_EXPANDED_MARKERS,
     payload: newMarkers
