@@ -16,14 +16,14 @@ class ExpandedRouteList extends Component {
     let key = 0;
     for (let route in this.props.routes) {
       if (this.props.routes[route] !== null) {
-      routes.push(<Route
-        key={key++}
-        route={this.props.routes[route]}
-        selectRoute={this.props.selectRoute}
-        classStyle={route}
-        />);
+        routes.push(<Route
+          key={key++}
+          route={this.props.routes[route]}
+          selectRoute={this.props.selectRoute}
+          classStyle={route}
+          />);
+        }
       }
-    }
       return routes;
     }
   render() {
