@@ -52,10 +52,6 @@ body {
 .routesTest {
   position: inherit; }
 
-.marker-tag {
-  margin-left: 10px;
-  margin-top: 2px; }
-
 .search-box {
   margin: 0 auto;
   width: 60%;
@@ -79,7 +75,7 @@ body {
   display: flex; }
 
 .form-btn {
-  background-color: #e6e6e6;
+  background-color: #f3f3f5;
   height: 30px;
   width: 100px;
   margin: 10px 5px 0px 5px; }
@@ -130,14 +126,10 @@ body {
   margin: 0 auto; }
   .list-container ul {
     padding: 0px; }
-  .list-container li {
-    padding-right: 15px; }
-  .list-container li:last-child {
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px; }
 
 .uber-list-container {
   box-shadow: 2px 2px 23px -2px rgba(0, 0, 0, 0.3);
+  background-color: #161629;
   overflow: hidden;
   float: left;
   width: 50%; }
@@ -154,6 +146,7 @@ body {
 
 .lyft-list-container {
   box-shadow: 2px 2px 23px -2px rgba(0, 0, 0, 0.3);
+  background-color: #EA0B8C;
   overflow: hidden;
   float: right;
   width: 50%; }
@@ -242,7 +235,6 @@ body {
   background-color: #444; }
 
 .inactive-expand {
-  color: #444 !important;
   opacity: .3;
   pointer-events: none; }
 
@@ -257,32 +249,55 @@ body {
   width: 50%;
   z-index: 50; }
 
+.empty-message {
+  display: none; }
+
 @media (max-width: 955px) {
   #container {
     flex-direction: column; }
+  .expanded-routes {
+    transition-duration: 400ms; }
   .walking-distance {
     width: 100%; }
   .information-view {
+    height: 100%;
     flex-direction: column; }
   #site-title {
     font-size: 22px;
-    padding: 2px; }
+    padding: 2px;
+    display: none; }
   .marker-tag {
-    margin-left: 10px; }
+    margin: 5px 10px; }
   .list-container {
-    flex: 0;
-    overflow: visible; }
+    border-top: 1px solid #444;
+    background: linear-gradient(0deg, white 0%, #f2f2f2 100%);
+    flex: 1;
+    overflow: scroll; }
   .list-item {
-    height: 12em; }
+    padding: 5px;
+    flex-direction: column;
+    display: block;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 0; }
+  .uber-list-container {
+    overflow: scroll;
+    height: 100%; }
+  .lyft-list-container {
+    overflow: scroll;
+    height: 100%; }
   .route-name {
-    font-size: 1.5em;
-    margin-bottom: 10px; }
+    font-size: 12px;
+    padding: 0; }
   .driver-eta,
   .route-duration {
-    font-size: 1em; }
+    font-size: 12px; }
   .route-cost {
     float: none;
-    font-size: 3em; }
+    font-size: 14px;
+    margin-right: 4px;
+    height: auto;
+    line-height: inherit; }
   .selected-route-container {
     right: 10%;
     left: 10%;
@@ -298,7 +313,15 @@ body {
       height: 3em; }
   #map-display {
     flex: none;
-    height: 330px; }
+    padding: 0;
+    height: 230px; }
+  .empty-message {
+    height: 100%;
+    margin: 1.5em 0;
+    color: gray;
+    opacity: .3;
+    display: inherit;
+    transition: all .3s ease .15s; }
   .search-box {
     padding: 0;
     left: 0;
@@ -318,26 +341,36 @@ body {
       height: 3em; }
   .form-submit {
     width: 100%;
-    background-color: gray; }
+    background-color: #f3f3f5; }
+    .form-submit button:first-child {
+      margin: 0px 2px; }
+    .form-submit button:nth-child(2) {
+      margin-right: 2px; }
   .form-btn {
+    background-color: #279a80;
+    color: #f3f3f5;
     border-radius: 5px;
-    background-color: #f3f3f5;
     margin: 0;
-    border: 1px solid #444;
+    border: none;
     width: 50%;
     font-size: 1.5em;
     height: 2.2em;
     cursor: pointer; }
     .form-btn:hover {
-      background-color: white; }
+      background-color: #279a80; }
     .form-btn:active {
-      background-color: #f2f2f2; }
+      background-color: #30b597; }
     .form-btn:focus {
       outline: none; }
-  .price,
-  .time {
-    height: 10em !important; }
+  .price .route-cost, .price .route-name,
+  .time .route-cost,
+  .time .route-name {
+    font-size: 14px; }
   .disclaimer {
-    font-size: .9em; } }
+    font-size: 10px; } }
+
+@media (max-width: 420px) {
+  .list-item {
+    display: flex; } }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

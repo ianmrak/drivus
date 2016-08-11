@@ -54,7 +54,7 @@ function reverseGeoCode(geoPoint) {
           })
           .catch((err) => {
             return 'Reversing Geocode Failed';
-          })
+          });
 }
 
 // Accepts a starting lat/lng and generates valid lat/lng coordinates at each bearing
