@@ -21,7 +21,10 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       loaders: ['babel'],
-      include: path.join(__dirname, 'src')
+      include: path.join(__dirname, 'src'),
+      query: {
+        presets: ['react', 'es2015', 'react-hmre']
+      }
     }, {
       test: /\.scss$/,
       loaders: ["style", "css", "sass"],
@@ -31,13 +34,6 @@ module.exports = {
       // Doesn't work :(
       test: /\.(jpe?g|png|gif|svg)$/i,
       loader:'file'
-    }, {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['react', 'es2015', 'react-hmre']
-      },
     }]
   },
   externals: {
