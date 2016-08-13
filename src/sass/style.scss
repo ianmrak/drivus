@@ -63,14 +63,22 @@ body {
 
 .search-box {
   box-shadow: 0px -1px 3px 1px rgba(0, 0, 0, 0.5);
-  background-color: #4c4c4c;
+  background-color: mediumaquamarine;
   width: 33%;
   z-index: 5;
 }
 
+.information-view {
+  flex: 1;
+  overflow: scroll;
+  width: 100%;
+}
+
+.routesTest {
+  position: inherit;
+}
 
 .location-form {
-  background-color: #4c4c4c;
   margin: $center;
   align-items: center;
   display: flex;
@@ -141,32 +149,10 @@ body {
   }
 }
 
-/* EXPANDED SEARCH */
-/*
 .inactive-expand {
   color: $secondary-color !important;
   opacity: .3;
   pointer-events: none;
-}*/
-
-.inactive-expand {
-  /*color: $secondary-color !important;*/
-  max-height: 0px;
-  pointer-events: none;
-}
-
-.active-expand {
-  /*color: $secondary-color !important;*/
-  max-height: 80px;
-  pointer-events: auto;
-  background-color: #4c4c4c;
-  color: white;
-  padding: 8px 0;
-}
-
-.expand-search {
-  text-align: left;
-  margin: 0 20px 20px 20px;
 }
 
 .slider-show {
@@ -197,37 +183,14 @@ body {
   color: black;
 }
 
+.expand-search {
+  text-align: left;
+  margin: 0 20px 20px 20px;
+}
+
 .expand-slider {
   width: 10%;
   min-width: 10px;
-}
-
-.expand-btn-bar {
-  width: 80%;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-}
-
-.expand-btn {
-  width: 25%;
-  box-flex: 1;
-  border: 1px black solid;
-}
-
-
-
-/* EXPANDED SEARCH END*/
-
-.information-view {
-  flex: 1;
-  overflow: scroll;
-  width: 100%;
-}
-
-.routesTest {
-  position: inherit;
 }
 
 .uber {
@@ -434,6 +397,11 @@ body {
   }
 }
 
+.inactive-expand {
+  opacity: .3;
+  pointer-events: none;
+}
+
 .walking-distance {
   margin: $center;
   color: $off-white;
@@ -458,7 +426,6 @@ body {
   padding: 5px 20px;
   font-size: 14px;
 }
-
 // MOBILE-ISH ******************************************
 @media (max-width: 1000px) {
   #container {
@@ -468,14 +435,33 @@ body {
     margin-top: 0;
     border-bottom: 1px solid gray;
   }
-  .expand-search {
+  .active-expand {
+    transition-duration: 200ms;
     margin: 0;
     position: absolute;
     background-color: mediumaquamarine;
-    padding: 10px;
+    padding-top: 10px;
     box-sizing: border-box;
     width: 100%;
     z-index: -1;
+  }
+  .expand-btn {
+    cursor: pointer;
+    color: white;
+    border: 1px solid mediumaquamarine;
+    background-color: #279a80;
+    width: 25%;
+    padding: 10px;
+    &:active {
+      background-color: #2ea58a;
+    }
+    &:focus {
+      background-color: #437979;
+    }
+  }
+  .expand-text {
+    font-size: 14px;
+    padding-bottom: 10px;
   }
   .expanded-routes {
     transition-duration: 400ms;
